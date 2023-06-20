@@ -12,60 +12,67 @@ Les listes sont suffixées par `[]`.
 ```
 racine[]
 |
-|->id = "tt[digit]{7}"
+|->id = "tt[[digit]]{7}"
 |
 |->pays
 |  |
-|  |->nom = enum("[alpha]*") 
+|  |->nom = ${enum("[[alpha]]*")} 
 |  |
-|  |->url = "/search/title/?country_of_origin=[alpha]{2}&ref=[alphanum]*"
+|  |->url = "/search/title/\?country_of_origin="
+|           ${enum("[[alpha]]{2}")}"&ref_=tt_dt_cn"
 |
-|->nom = "[alpha]*"
+|->nom = "[[alpha]]*"
 |
-|->url = "title/"${racine.id}"/\?ref=[alphanum]"
+|->url = "/title/"${racine.id}"/\?ref_=nm_flmg_act_[[digit]]"
 |
-|->plot = "[alpha]*"
+|->plot = "[[alpha]]*"
 |
-|->langue = "[alpha]*"
+|->langue = "[[alpha]]*"
 |
 |->lieuTournage = "" (nullable)
 |
 |->realisateurs[]
 |  |
-|  |->identite = "[alpha]*"
+|  |->identite = "[[alpha]]*"
 |  |
-|  |->url = "/name/nm[digit]{7}/?ref_=[alphanum]"
+|  |->url = "/name/nm[[digit]]{7}/\?ref_=tt_ov_dr
+|           |"${racine.pays.url}
 |
 |->castingPrincipal[]
 |  |
-|  |->id = "nm[digit]{7}"
+|  |->id = "nm[[digit]]{7,8}"
 |  |
-|  |->identite = "[alpha]*"
+|  |->identite = "[[alpha]]*"
 |  |
 |  |->naissance[]
 |  |  |
-|  |  |->dateNaissance = "[digit]{4}-[digit]{1,2}-[digit]{2}"
+|  |  |->dateNaissance = "[[digit]]{4}-[[digit]]{1,2}-[[digit]]{2}"
 |  |  |
-|  |  |->lieuNaissance = "[alpha]*"
+|  |  |->lieuNaissance = "[[alpha]]*"
 |  |
-|  |->url = "/name/nm[digit]{7}/?ref_=[alphanum]"
+|  |->url = "/name/nm[[digit]]{7,8}/\?ref_=tt_ov_st"
 |  |
-|  |->height = (nullable)
+|  |->height = null
 |  |
-|  |->roles[]
+|  |->roles[] = []
 |
-|->anneeSortie = "[digit]{4}" (nullable)
+|->anneeSortie = "[[digit]]{4}" (nullable)
 |
 |->roles[]
 |  |
-|  |->characterName = "[alpha]*"
+|  |->characterName = "[[alpha]]*"
 |  |
 |  |->acteur[] = ${racine.castingPrincipal[]}
+|  |  |
+|  |  |->url = /name/nm[[digit]]{7,8}\?ref_=tt_cl_t_[[digit]]*
 |  |
 |  |->film = ${racine.id}
 |
-|->genres[] = ["[alpha]*"]
+|->genres[] = [${enum("[[alpha]]*")}]
 ```
+
+Les films sont identifiés via `"tt[[digit]]{7}"` alors que que les individus
+sont identifiés par `"nm[[digit]]{7}"`.
 
 ### Modélisation
 

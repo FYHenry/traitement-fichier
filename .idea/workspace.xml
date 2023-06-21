@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e29924e0-ec35-452f-8c70-c9b7a3220a52" name="Changes" comment="New project : plain data analysis">
+    <list default="true" id="e29924e0-ec35-452f-8c70-c9b7a3220a52" name="Changes" comment="New project : Starting diagrams">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,12 +77,20 @@
       <option name="project" value="LOCAL" />
       <updated>1687270427730</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="New project : Starting diagrams">
+      <created>1687278018549</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687278018549</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="New project : Internet Movie DataBase" />
     <MESSAGE value="New project : plain data analysis" />
-    <option name="LAST_COMMIT_MESSAGE" value="New project : plain data analysis" />
+    <MESSAGE value="New project : Starting diagrams" />
+    <option name="LAST_COMMIT_MESSAGE" value="New project : Starting diagrams" />
   </component>
 </project>

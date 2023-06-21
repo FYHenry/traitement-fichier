@@ -12,7 +12,7 @@ Les listes sont suffixées par `[]`.
 ```
 racine[]
 |
-|->id = "tt[[digit]]{7}"
+|->id = "tt[[digit]]{7,8}"
 |
 |->pays
 |  |
@@ -44,7 +44,7 @@ racine[]
 |  |
 |  |->identite = "[[alpha]]*"
 |  |
-|  |->naissance[]
+|  |->naissance
 |  |  |
 |  |  |->dateNaissance = "[[digit]]{4}-[[digit]]{1,2}-[[digit]]{2}"
 |  |  |

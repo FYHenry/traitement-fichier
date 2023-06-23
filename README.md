@@ -100,3 +100,14 @@ CREATE USER 'FYHenry'@'127.0.0.1' IDENTIFIED BY 'ZeBigueData';
 GRANT ALL PRIVILEGES ON movies.* TO 'FYHenry'@'127.0.0.1';
 DROP DATABASE IF EXISTS movies; CREATE DATABASE movies;
 ```
+
+Cette base est à compléter par l’application.
+Le cadriciel **Jakarta Persistence API 3.0** permet de créer puis de manipuler
+les tableaux en annotant les classes d’entité.
+
+### Architecture logicielle
+
+L’aplication s’organise en trois groupes :
+* Les entités ou _Business Objets_ (BO);
+* Le service ou _Business Logic Layer_ (BLL);
+* L’interface utilisateur (UI) ou Interface Homme-Machine.

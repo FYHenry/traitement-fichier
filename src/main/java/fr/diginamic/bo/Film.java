@@ -1,4 +1,4 @@
-package fr.diginamic.entities;
+package fr.diginamic.bo;
 
 import jakarta.persistence.*;
 /** Film */

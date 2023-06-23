@@ -6,7 +6,7 @@
              https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
     <persistence-unit name="traitement-fichier"
                       transaction-type="RESOURCE_LOCAL">
-        <description>This unit is experimental around the "banque" database (MariaDB)
+        <description>This unit is experimental around the "movies" database (MariaDB)
         </description>
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
@@ -14,14 +14,18 @@
             <property name="jakarta.persistence.schema-generation.database.action"
                       value="drop-and-create"/>
             <property name="jakarta.persistence.jdbc.url"
-                      value="jdbc:mariadb://localhost/movies?localSocket=/run/mysqld/mysqld.sock" />
+                      value="jdbc:mariadb://127.0.0.1:3306/movies" />
             <property name="jakarta.persistence.jdbc.user"
-                      value="alnotz" />
-            <!--property name="jakarta.persistence.jdbc.password" value="" /-->
+                      value="FYHenry" />
+            <property name="jakarta.persistence.jdbc.password"
+                      value="ZeBigueData"/>
             <property name="jakarta.persistence.jdbc.driver"
                       value="org.mariadb.jdbc.Driver" />
             <property name="hibernate.show_sql"
                       value="true"/>
+            <!--property name="hibernate.cache.use_seconde_level_cache" value=""/>
+            <property name="jakarta.persistence.sharedCache.mode" value="ENABLE_SELECTIVE"/>
+            <property name="hibernate.cache." value=""/-->
         </properties>
     </persistence-unit>
 </persistence>

@@ -6,7 +6,19 @@
 
     <groupId>fr.diginamic</groupId>
     <artifactId>traitement-fichier</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
+    <description>Application interactive pour exploiter les données JSON de
+    Internet Movie DataBase</description>
+    <url>https://github.com/FYHenry/traitement-fichier</url>
+    <developers>
+        <developer>
+            <name>FYHenry</name>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -17,13 +29,18 @@
     <profiles>
         <profile>
             <id>dev</id>
-            <dependencies>
-                <dependency>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.12.4</version>
-                </dependency>
-            </dependencies>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.12.4</version>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
         <profile>
             <id>prod</id>
@@ -38,12 +55,21 @@
                             <optimize>true</optimize>
                         </configuration>
                     </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.12.4</version>
+                        <configuration>
+                            <skipTests>true</skipTests>
+                        </configuration>
+                    </plugin>
                 </plugins>
             </build>
         </profile>
     </profiles>
 
-    <dependencies><!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
         <dependency>
             <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -55,7 +81,14 @@
             <version>3.1.4</version>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>

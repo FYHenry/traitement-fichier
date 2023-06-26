@@ -107,7 +107,30 @@ les tableaux en annotant les classes d’entité.
 
 ### Architecture logicielle
 
-L’aplication s’organise en trois groupes :
+L’application s’organise en trois groupes :
 * Les entités ou _Business Objets_ (BO);
 * Le service ou _Business Logic Layer_ (BLL);
 * L’interface utilisateur (UI) ou Interface Homme-Machine.
+
+### Essais unitaires
+
+Parmi les classes à l’essai via JUnit :
+* Les services comme `fr.diginamic.bll.Crud`.
+
+### Décomposition des URLs
+
+Je constate un motif commun aux différents URLs.
+Sûrement pour accéder aux différentes données via une interface depuis un
+navigateur Web.
+
+```
+PATH/ID?country_of_origin=COUNTRY&ref_=REFERENCE
+```
+* Où `PATH` est un chemin comme `/title`, `/search/title`, ou `/name` ;
+* Où `ID` est un identifiant optionel de nom suivant le motif `nm[[digit]]{7,8}` ;
+* Où `COUNTRY` est un code de pays (ISO 3166) optionel ;
+* Où `REFERENCE` est une référence à une type de donnée comme `tt_ov_dr` pour
+un réalisateur ou `tt_dt_cn` pour un pays.
+
+La complexité de ces URLs peut justifier une classe `Url` à la place d’une
+chaîne de caractères `String`.

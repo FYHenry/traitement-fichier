@@ -19,7 +19,6 @@
         </developer>
     </developers>
 
-
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -90,6 +89,7 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
         <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
@@ -118,7 +118,6 @@
                 </executions>
             </plugin>
         </plugins>
-        <sourceDirectory>src/main/java</sourceDirectory>
     </build>
 
 </project>

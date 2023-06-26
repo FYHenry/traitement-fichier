@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 /** Film */
 @Entity
 @Table(name = "Film")
-public class Film {
+public class Film implements Recordable {
     /** Identifiant (clef primaire) */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

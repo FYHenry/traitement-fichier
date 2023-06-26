@@ -1,5 +1,6 @@
 package fr.diginamic.bll;
 
+import fr.diginamic.bo.Recordable;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -18,15 +19,25 @@ public final class Crud implements AutoCloseable {
         }
         return crud;
     }
-    public void create(Object entity){
-        this.em.getTransaction().begin();
-        this.em.persist(entity);
-        this.em.merge(entity);
-        this.em.getTransaction().commit();
+    public Boolean create(Recordable entity){
+        final Boolean SUCCESS = entity != null;
+        if(SUCCESS){
+            this.em.getTransaction().begin();
+            this.em.persist(entity);
+            this.em.merge(entity);
+            this.em.getTransaction().commit();
+        }
+        return SUCCESS;
     }
-    public void update(Object object){}
-    public void read(Object object){}
-    public void delete(Object object){}
+    public Boolean update(Recordable entity){
+        return true;
+    }
+    public Boolean read(Recordable entity){
+        return true;
+    }
+    public Boolean delete(Recordable entity){
+        return true;
+    }
     @Override
     public void close() {
         this.em.close();

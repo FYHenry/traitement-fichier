@@ -98,12 +98,17 @@ Pour débuter quelques requêtes en SQL :
 DROP USER IF EXISTS FYHenry;
 CREATE USER 'FYHenry'@'127.0.0.1' IDENTIFIED BY 'ZeBigueData';
 GRANT ALL PRIVILEGES ON movies.* TO 'FYHenry'@'127.0.0.1';
-DROP DATABASE IF EXISTS movies; CREATE DATABASE movies;
+DROP DATABASE IF EXISTS movies;
+CREATE DATABASE movies;
+USE movies;
 ```
 
 Cette base est à compléter par l’application.
 Le cadriciel **Jakarta Persistence API 3.0** permet de créer puis de manipuler
 les tableaux en annotant les classes d’entité.
+
+Dans une relation `@OneToMany` je peux préférer une inclusion via
+`@Embeddable`. 
 
 ### Architecture logicielle
 
@@ -115,7 +120,9 @@ L’application s’organise en trois groupes :
 ### Essais unitaires
 
 Parmi les classes à l’essai via JUnit :
-* Les services comme `fr.diginamic.bll.Crud`.
+* Les services comme `fr.diginamic.bll.Crud` ;
+* Des méthodes d’entité liées aux relations `@ManyToMany` comme
+`Recordable.add`. 
 
 ### Décomposition des URLs
 
@@ -134,3 +141,8 @@ un réalisateur ou `tt_dt_cn` pour un pays.
 
 La complexité de ces URLs peut justifier une classe `Url` à la place d’une
 chaîne de caractères `String`.
+
+## Sources
+* [Hibernate User Guide](
+    https://docs.jboss.org/hibernate/orm/6.2/userguide/html_single/Hibernate_User_Guide.html
+).

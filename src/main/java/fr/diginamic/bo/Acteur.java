@@ -2,6 +2,9 @@ package fr.diginamic.bo;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /** Acteur */
 @Entity
 @Table(name = "Acteur")
@@ -13,6 +16,9 @@ public class Acteur implements Recordable {
     /** URL */
     @Column(name = "url")
     private String url;
+    /** Rôles */
+    @ManyToMany(mappedBy = "acteurs")
+    private List<Role> roles = new ArrayList<>();
     /** Construction. */
     public Acteur() {
     }

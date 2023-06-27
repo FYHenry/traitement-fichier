@@ -2,6 +2,9 @@ package fr.diginamic.bo;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /** Pays */
 @Entity
 @Table(name = "Pays")
@@ -9,6 +12,7 @@ public class Pays implements Recordable {
     /** Identifiant (clef primaire) */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_pays")
     private int id;
     /** Nom */
     @Column(name = "nom")
@@ -16,6 +20,9 @@ public class Pays implements Recordable {
     /** URL */
     @Column(name = "url")
     private String url;
+    /** Films */
+    @OneToMany(mappedBy = "pays")
+    private List<Film> films = new ArrayList<>();
     /** Construction. */
     public Pays() {
     }

@@ -2,13 +2,17 @@ package fr.diginamic.bo;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /** Élément du Casting Principal */
 @Entity
-@Table(name = "casting_principal")
+@Table(name = "Casting_principal")
 public class CastingPrincipal implements Recordable {
     /** Identifiant (clef primaire) */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_casting_principal")
     private int id;
     /** Identitfiant du nom */
     @Column(name = "name_id")
@@ -19,6 +23,12 @@ public class CastingPrincipal implements Recordable {
     /** URL */
     @Column(name = "url")
     private String url;
+    /** Naissance */
+    @Embedded
+    private Naissance naissance;
+    /** Films */
+    @ManyToMany(mappedBy = "castingPrincipals")
+    private List<Film> films = new ArrayList<>();
     /** Construction */
     public CastingPrincipal() {
     }

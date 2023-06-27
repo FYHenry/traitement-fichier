@@ -21,4 +21,7 @@ public class App {
             System.out.println("Gestionnaire déjà fermé.");
         }
     }
+    private static void importJSON(){
+
+    }
 }

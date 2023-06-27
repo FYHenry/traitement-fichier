@@ -4,18 +4,13 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 /** Naissance */
-@Entity
-@Table(name = "Naissance")
+@Embeddable
 public class Naissance implements Recordable {
-    /** Identifiant (clef primaire) */
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
     /** Date */
-    @Column(name = "date")
+    @Column(name = "date_naissance")
     private LocalDate date;
     /** Lieu */
-    @Column(name = "lieu")
+    @Column(name = "lieu_naissance")
     private String lieu;
     /** Construction */
     public Naissance() {

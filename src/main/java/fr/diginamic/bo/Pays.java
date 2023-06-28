@@ -1,5 +1,6 @@
 package fr.diginamic.bo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class Pays implements Recordable {
     @Column(name = "url")
     private String url;
     /** Films */
+    @JsonIgnore
     @OneToMany(mappedBy = "pays")
     private List<Film> films = new ArrayList<>();
     /** Construction. */
@@ -35,5 +37,20 @@ public class Pays implements Recordable {
     public Pays(String nom, String url) {
         this.nom = nom;
         this.url = url;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+    public List<Film> getFilms() {
+        return films;
     }
 }

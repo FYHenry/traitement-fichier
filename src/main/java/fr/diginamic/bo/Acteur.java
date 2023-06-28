@@ -12,10 +12,14 @@ public class Acteur implements Recordable {
     /** Identifiant (clef primaire) */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_acteur")
     private int id;
     /** URL */
     @Column(name = "url")
     private String url;
+    /** Naissance */
+    @Embedded
+    private Naissance naissance;
     /** Rôles */
     @ManyToMany(mappedBy = "acteurs")
     private List<Role> roles = new ArrayList<>();

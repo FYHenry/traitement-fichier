@@ -87,4 +87,52 @@ public class Film implements Recordable {
         this.pays = pays;
         this.langue = langue;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getPlot() {
+        return plot;
+    }
+
+    public String getLieuTournage() {
+        return lieuTournage;
+    }
+
+    public int getAnneeSortie() {
+        return anneeSortie;
+    }
+
+    public List<Realisateur> getRealisateurs() {
+        return realisateurs;
+    }
+
+    public List<CastingPrincipal> getCastingPrincipals() {
+        return castingPrincipals;
+    }
+
+    public Pays getPays() {
+        return pays;
+    }
+
+    public Langue getLangue() {
+        return langue;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public List<Genre> getGenres() {
+        return genres;
+    }
 }

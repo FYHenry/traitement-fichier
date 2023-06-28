@@ -1,11 +1,10 @@
 package fr.diginamic.bo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /** Langue */
 @Entity
@@ -23,6 +22,7 @@ public class Langue implements Recordable {
     @Column(name = "code")
     private String code;
     /** Films */
+    @JsonIgnore
     @OneToMany(mappedBy = "langue")
     private List<Film> films = new ArrayList<>();
     /** Construction. */
@@ -37,5 +37,21 @@ public class Langue implements Recordable {
     public Langue(String nom, String code) {
         this.nom = nom;
         this.code = code;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public List<Film> getFilms() {
+        return films;
     }
 }

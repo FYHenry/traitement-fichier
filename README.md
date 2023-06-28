@@ -68,6 +68,8 @@ racine[]
 |  |->acteur[] = ${racine.castingPrincipal[]}
 |  |  |
 |  |  |->url = /name/nm[[digit]]{7,8}\?ref_=tt_cl_t_[[digit]]*
+|  |  |
+|  |  |->naissance = ${racine.castingPrincipal[0].naissance}
 |  |
 |  |->film = ${racine.id}
 |
@@ -76,6 +78,9 @@ racine[]
 
 Les films sont identifiés via `"tt[[digit]]{7,8}"` alors que que les individus
 sont identifiés par `"nm[[digit]]{7,8}"`.
+
+Une difficulté est d’obtenir l’objet en Java correspondant à la donnée brute
+en JSON.
 
 ### Modélisation
 
@@ -93,7 +98,7 @@ D’autant plus qu’ils partagent les mêmes identifiants `"tt[[digit]]{7,8}"`.
 
 ### Base de données
 
-Pour débuter quelques requêtes en SQL :
+Pour débuter quelques requêtes en SQL avant usage de l’application:
 ```sql
 DROP USER IF EXISTS FYHenry;
 CREATE USER 'FYHenry'@'127.0.0.1' IDENTIFIED BY 'ZeBigueData';
@@ -108,21 +113,26 @@ Le cadriciel **Jakarta Persistence API 3.0** permet de créer puis de manipuler
 les tableaux en annotant les classes d’entité.
 
 Dans une relation `@OneToMany` je peux préférer une inclusion via
-`@Embeddable`. 
+`@Embeddable`.
 
 ### Architecture logicielle
 
-L’application s’organise en trois groupes :
+L’application s’organise en quatre paquets :
 * Les entités ou _Business Objets_ (BO);
 * Le service ou _Business Logic Layer_ (BLL);
-* L’interface utilisateur (UI) ou Interface Homme-Machine.
+* L’interface utilisateur (UI) ou Interface Homme-Machine ;
+* Un paquet dédié au _Data Transfert Object_ – pas tout à fait un
+_Data Access Layer_.
+
+L’interface `fr.diginamic.bo.Recordable` représente toutes les entités
+enregistrables dans la base de données `movies`.
 
 ### Essais unitaires
 
 Parmi les classes à l’essai via JUnit :
 * Les services comme `fr.diginamic.bll.Crud` ;
 * Des méthodes d’entité liées aux relations `@ManyToMany` comme
-`Recordable.add`. 
+`fr.diginamic.bo.Recordable.add`. 
 
 ### Décomposition des URLs
 
@@ -142,7 +152,16 @@ un réalisateur ou `tt_dt_cn` pour un pays.
 La complexité de ces URLs peut justifier une classe `Url` à la place d’une
 chaîne de caractères `String`.
 
-## Sources
+Une autre possibilité est un petit service `fr.diginamic.bo.UrlEditor`
+facilitant la bonne création et édition des chaînes `url`.
+
+### Sources
 * [Hibernate User Guide](
     https://docs.jboss.org/hibernate/orm/6.2/userguide/html_single/Hibernate_User_Guide.html
+) ;
+* [JUnit 4 Wiki](
+    https://github.com/junit-team/junit4/wiki
+) ;
+* [Jackson Github Repository](
+  https://github.com/FasterXML/jackson-databind
 ).

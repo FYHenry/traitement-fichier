@@ -99,6 +99,12 @@ D’autant plus qu’ils partagent les mêmes identifiants `"tt[[digit]]{7,8}"`.
 Les modèles et diagrammes sont disponibles dans le répertoire `conception/`
 du projet.
 
+![MCD](./conception/MCD.png)
+
+![MLD](./conception/MLD.png)
+
+![ClassDiagramm](./conception/ClassDiagram.svg)
+
 ### Base de données
 
 Pour débuter quelques requêtes en SQL avant usage de l’application :

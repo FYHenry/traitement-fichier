@@ -32,26 +32,26 @@ public class CrudTest {
     }
     @Test
     public void testCreate(){
-        Assert.assertTrue("Error: N’est pas une entité non nulle!",
+        Assert.assertTrue("Erreur: N’est pas une entité non nulle!",
                 crud.create(pays));
-        Assert.assertTrue("Error: N’est pas une entité non nulle!",
+        Assert.assertTrue("Erreur: N’est pas une entité non nulle!",
                 crud.create(langue));
-        Assert.assertTrue("Error: N’est pas une entité non nulle!",
+        Assert.assertTrue("Erreur: N’est pas une entité non nulle!",
                 crud.create(film));
     }
     @Test
     public void testUpdate(){
-        Assert.assertTrue("Error: N’est pas une entité non nulle!",
+        Assert.assertTrue("Erreur: N’est pas une entité non nulle!",
                 crud.update(film));
     }
     @Test
     public void testRead(){
-        Assert.assertTrue("Error: N’est pas une entité non nulle!",
+        Assert.assertTrue("Erreur: N’est pas une entité non nulle!",
                 crud.read(film));
     }
     @Test
     public void testDelete(){
-        Assert.assertTrue("Error: N’est pas une entité non nulle!",
+        Assert.assertTrue("Erreur: N’est pas une entité non nulle!",
                 crud.delete(film));
     }
     @Test

@@ -36,3 +36,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Experimental JSON data ###
+/filmsShort.json
+/result.json

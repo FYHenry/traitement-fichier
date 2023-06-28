@@ -96,9 +96,12 @@ Une classe mère `Individu` est envisagée  pour regrouper `Acteur`,
 `Réalisateur` et `CastingPrincipal` tant leurs attributs sont similaires.
 D’autant plus qu’ils partagent les mêmes identifiants `"tt[[digit]]{7,8}"`.
 
+Les modèles et diagrammes sont disponibles dans le répertoire `conception/`
+du projet.
+
 ### Base de données
 
-Pour débuter quelques requêtes en SQL avant usage de l’application:
+Pour débuter quelques requêtes en SQL avant usage de l’application :
 ```sql
 DROP USER IF EXISTS FYHenry;
 CREATE USER 'FYHenry'@'127.0.0.1' IDENTIFIED BY 'ZeBigueData';

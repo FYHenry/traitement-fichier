@@ -4,28 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e29924e0-ec35-452f-8c70-c9b7a3220a52" name="Changes" comment="Experimental JSON Data ignored">
-      <change afterPath="$PROJECT_DIR$/films.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/bll/JsonEditor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/dto/ActeurJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/dto/CastingElementJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/dto/FilmJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/dto/JsonData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/dto/NaissanceJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/dto/PaysJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/dto/RealisateurJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/dto/RoleJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/dto/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/ui/Lecteur.java" afterDir="false" />
+    <list default="true" id="e29924e0-ec35-452f-8c70-c9b7a3220a52" name="Changes" comment="Other update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/diginamic/bo/Acteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/bo/Acteur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/diginamic/bo/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/bo/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/diginamic/bo/Langue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/bo/Langue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/diginamic/bo/Pays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/bo/Pays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/diginamic/bo/Recordable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/bo/Recordable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/diginamic/ui/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/diginamic/ui/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/fr/diginamic/bll/CrudTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fr/diginamic/bll/CrudTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +198,31 @@
       <option name="project" value="LOCAL" />
       <updated>1687959102501</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Entities update">
+      <option name="closed" value="true" />
+      <created>1687959437501</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687959437501</updated>
+    </task>
+    <task id="LOCAL-00015" summary="JSON file reading added">
+      <option name="closed" value="true" />
+      <created>1687959685612</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1687959685612</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Other update">
+      <option name="closed" value="true" />
+      <created>1687959709220</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1687959709220</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,6 +248,9 @@
     <MESSAGE value="Just after the correct associations between entities" />
     <MESSAGE value="README.md updated" />
     <MESSAGE value="Experimental JSON Data ignored" />
-    <option name="LAST_COMMIT_MESSAGE" value="Experimental JSON Data ignored" />
+    <MESSAGE value="Entities update" />
+    <MESSAGE value="JSON file reading added" />
+    <MESSAGE value="Other update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Other update" />
   </component>
 </project>
